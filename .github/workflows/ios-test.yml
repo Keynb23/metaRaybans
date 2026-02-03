@@ -15,10 +15,6 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Set up Xcode
-      # We ensure we are using a version of Xcode that supports the Meta SDK
-      run: sudo xcode-select -s /Applications/Xcode_15.2.app
-
     - name: Install Dependencies
       # This resolves the Meta Wearables SDK via Swift Package Manager
       run: swift package resolve
