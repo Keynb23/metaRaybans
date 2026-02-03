@@ -10,8 +10,8 @@ let package = Package(
         .library(name: "MetaRaybansApp", targets: ["MetaRaybansApp"]),
     ],
     dependencies: [
-        // The Meta Wearables SDK
-        .package(url: "https://github.com/facebook/meta-wearables-dat-ios", from: "1.0.0")
+        // The Meta Wearables SDK - Using main branch for latest updates
+        .package(url: "https://github.com/facebook/meta-wearables-dat-ios", branch: "main")
     ],
     targets: [
         .target(
