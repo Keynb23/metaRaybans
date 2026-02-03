@@ -1,7 +1,8 @@
 import XCTest
 @testable import MetaRaybansApp
-import Wearables
-import MockDeviceKit // Assuming this is provided by Meta or a separate package
+import MWDATCore
+import MWDATCamera
+import MWDATMockDevice
 
 final class MockDeviceKitTests: XCTestCase {
     

@@ -1,5 +1,5 @@
 import Foundation
-import Wearables
+import MWDATCore
 import Combine
 
 class WearablesManager: ObservableObject {

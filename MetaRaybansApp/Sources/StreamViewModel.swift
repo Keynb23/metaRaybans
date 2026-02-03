@@ -1,5 +1,6 @@
 import Foundation
-import Wearables
+import MWDATCore
+import MWDATCamera
 import Combine
 import UIKit
 import AVFoundation

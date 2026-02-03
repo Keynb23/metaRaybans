@@ -1,5 +1,5 @@
 import SwiftUI
-import Wearables
+import MWDATCore
 
 @main
 struct MetaRaybansApp: App {

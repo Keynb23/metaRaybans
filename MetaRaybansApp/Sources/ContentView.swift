@@ -1,5 +1,5 @@
 import SwiftUI
-import Wearables
+import MWDATCore
 
 struct ContentView: View {
     @EnvironmentObject var wearablesManager: WearablesManager

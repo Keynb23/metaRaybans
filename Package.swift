@@ -17,13 +17,17 @@ let package = Package(
         .target(
             name: "MetaRaybansApp",
             dependencies: [
-                .product(name: "Wearables", package: "meta-wearables-dat-ios")
+                .product(name: "MWDATCore", package: "meta-wearables-dat-ios"),
+                .product(name: "MWDATCamera", package: "meta-wearables-dat-ios")
             ],
             path: "MetaRaybansApp/Sources"
         ),
         .testTarget(
             name: "MetaRaybansAppTests",
-            dependencies: ["MetaRaybansApp"],
+            dependencies: [
+                "MetaRaybansApp",
+                .product(name: "MWDATMockDevice", package: "meta-wearables-dat-ios")
+            ],
             path: "MetaRaybansApp/Tests"
         ),
     ]
