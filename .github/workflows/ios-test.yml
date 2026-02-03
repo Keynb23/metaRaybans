@@ -1,0 +1,28 @@
+name: iOS Build and Test
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    # This is the "Simulated Mac" part. 
+    # github-actions will provision a real macOS runner for you.
+    runs-on: macos-latest
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Xcode
+      # We ensure we are using a version of Xcode that supports the Meta SDK
+      run: sudo xcode-select -s /Applications/Xcode_15.2.app
+
+    - name: Install Dependencies
+      # This resolves the Meta Wearables SDK via Swift Package Manager
+      run: swift package resolve
+
+    - name: Run Mock Tests
+      # This runs the MockDeviceKitTests I wrote for you
+      run: swift test -v
