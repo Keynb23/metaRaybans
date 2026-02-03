@@ -15,10 +15,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Install Dependencies
-      # This resolves the Meta Wearables SDK via Swift Package Manager
-      run: swift package resolve
+    - name: Resolve Dependencies
+      run: xcodebuild -resolvePackageDependencies
 
-    - name: Run Mock Tests
-      # This runs the MockDeviceKitTests I wrote for you
-      run: swift test -v
+    - name: Build and Test
+      # We must specify a destination that is an iOS Simulator.
+      # The Meta SDK only supports iOS, and 'swift test' defaults to macOS.
+      run: |
+        xcodebuild test \
+          -scheme MetaRaybansApp \
+          -destination 'platform=iOS Simulator,name=iPhone 15,OS=latest'
